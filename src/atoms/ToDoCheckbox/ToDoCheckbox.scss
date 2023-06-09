@@ -1,0 +1,34 @@
+.td-checkbox {
+  $tick-color: white;
+
+  &__container {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2rem;
+    height: 2rem;
+    border: 0.15rem solid black;
+    border-radius: 100%;
+  }
+
+  &__tick {
+    text-align: center;
+    color: $tick-color;
+    display: none;
+  }
+
+  &__input {
+    display: none;
+    &:checked ~ .td-checkbox__container {
+      background-image: linear-gradient(
+        to bottom right,
+        var(--secondary-color),
+        var(--primary-color)
+      );
+      .td-checkbox__tick {
+        display: block;
+      }
+    }
+  }
+}
